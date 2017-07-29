@@ -24,4 +24,8 @@ HTML5/CSS3/JavaScript/zepto.js/jsonp/base64
 
 ## 效果截图：
 
-![](./imgs/pannel.png)![](./imgs/bg.png)![](./imgs/nav-bar.png)![](./imgs/night.png)![](./imgs/chapter.png)
+![](./demo-imgs/pannel.png)
+![](./demo-imgs/bg.png)
+![](./demo-imgs/nav-bar.png)
+![](./demo-imgs/night.png)
+![](./demo-imgs/chapter.png)
