@@ -14,7 +14,7 @@ jquery.base64.js: 解码 base64 编码的插件。
 
 jquery.jsonp.js: 提供 jsonp 请求的插件。
 
-#### 实现功能：
+### 实现功能：
 
 1.点击内容区域唤醒字体设置面板，滑动页面 面板隐藏。
 
@@ -28,7 +28,7 @@ jquery.jsonp.js: 提供 jsonp 请求的插件。
 
 6.可存储用户上次设置参数。
 
-#### 后台交互
+### 后台交互
 
 项目是在 data 文件夹放了一些 json 文件，模拟服务端的返回值，这里要解决的问题有：
 
@@ -38,7 +38,7 @@ jquery.jsonp.js: 提供 jsonp 请求的插件。
 
 2）获取到了数据后，如何更新到页面。
 
-#### 效果截图：
+### 效果截图：
 
 ![](./imgs/nav-bar.png)![](./imgs/night.png)![](./imgs/pannel.png)
 
