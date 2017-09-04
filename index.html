@@ -395,40 +395,14 @@
 					var Chapter_id;
 					var ChapterTotal;
 					var init = function(UIcallback) {
-						/*
+						
 						getFictionInfo(function() {
 							getCurChapterContent(Chapter_id, function(data) {
 								// 数据层
 								UIcallback && UIcallback(data);
 							});
 						});
-						*/
-						getFictionInfoPromise().then(function(data) {
-								return getCurChapterContentPromise();
-							}).then(function(data) {
-								UIcallback && UIcallback(data);
-							});
-						}
-
-					// getFictionInfo Promise版本
-					var getFictionInfoPromise = function() {
-						return new Promise(function(resolve, reject) {
-							$.get('data/chapter.json', function(data) {
-								// 获得章节信息之后的回调
-								if(data.result == 0) {
-									Chapter_id = Util.StorageGetter('last_chapter_id');
-									ChapterTotal = data.chapters.length;
-									console.log(ChapterTotal)
-									if(Chapter_id == null) {
-										Chapter_id = data.chapters[1].chapter_id;
-									}		
-									resolve();
-								}else{
-									reject();
-								}		
-							}, 'json');
-						});
-					}
+					
 
 					var getFictionInfo = function(callback) {
 						$.get('data/chapter.json', function(data) {
@@ -441,25 +415,6 @@
 							}		
 							callback && callback();
 						}, 'json');
-					}
-
-					// getCurChapterContent Promise版本
-					var getCurChapterContentPromise = function() {
-						return new Promise(function(resolve, reject){
-							$.get('data/data' + Chapter_id + '.json', function(data){
-								// 获得章节内容之后的回调
-								if(data.result == 0) {
-									var url = data.jsonp;
-									Util.getBSONP(url, function(data) {
-										// debugger
-										// callback && callback(data);
-										resolve(data);
-									});
-								}else{
-									reject({msg: 'fail'});
-								}
-							},'json');
-						});
 					}
 
 					var getCurChapterContent = function(chapter_id, callback) {
@@ -519,10 +474,6 @@
 
 				// 交互的事件绑定
 				function EventHandler() {		
-					// touch
-					// zepto tap
-					// 安卓4.0 click 300ms延时
-					// click tap
 					$('#catalog_btn').click(function() {
 						location.href = "http://dushu.xiaomi.com/fiction/chapter/306450";
 					});
